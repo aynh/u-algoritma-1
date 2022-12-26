@@ -1,29 +1,31 @@
-program tipe_record;
-uses crt;
 
-var
-  siswa: record
+Program tipe_record;
+
+Uses crt;
+
+Var 
+  siswa: Record
     nama: string[20];
     umur: integer;
     sekolah: string[30];
     kota: string[20];
-  end;
+  End;
 
-begin
+Begin
   clrscr;
 
-  with siswa do
-    begin
-      nama:= 'Anto';
-      umur:= 17;
-      sekolah:= 'SMA 1 Durian Runtuh';
-      kota:= 'Palembang';
+  With siswa Do
+    Begin
+      nama := 'Anto';
+      umur := 17;
+      sekolah := 'SMA 1 Durian Runtuh';
+      kota := 'Palembang';
 
       writeln('Nama: ', siswa.nama);
       writeln('Umur: ', siswa.umur);
       writeln('Sekolah: ', siswa.sekolah);
       writeln('Kota: ', siswa.kota);
-    end;
+    End;
 
   readln;
-end.
+End.

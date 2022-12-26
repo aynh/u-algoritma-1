@@ -1,15 +1,17 @@
-program tipe_enumeration;
-uses crt;
 
-type
+Program tipe_enumeration;
+
+Uses crt;
+
+Type 
   nama_hari = (senin, selasa, rabu, kamis, jumat, sabtu, minggu);
   usia = 0..99;
 
-var
-  hari: array[0..9] of nama_hari;
-  umur: array[0..9] of usia;
+Var 
+  hari: array[0..9] Of nama_hari;
+  umur: array[0..9] Of usia;
 
-begin
+Begin
   clrscr;
 
   hari[1] := senin;
@@ -17,11 +19,11 @@ begin
 
   umur[3] := 17;
   umur[8] := 80;
-  
+
   writeln('hari [1]: ', hari[1]);
   writeln('hari [9]: ', hari[9]);
   writeln('umur [3]: ', umur[3]);
   writeln('umur [8]: ', umur[8]);
 
   readln;
-end.
+End.

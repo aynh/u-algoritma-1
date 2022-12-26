@@ -1,10 +1,12 @@
-program tipe_array;
-uses crt;
 
-var
-  nilai: array[0..9] of integer;
+Program tipe_array;
 
-begin
+Uses crt;
+
+Var 
+  nilai: array[0..9] Of integer;
+
+Begin
   clrscr;
 
   nilai[0] := 23;
@@ -18,4 +20,4 @@ begin
   writeln('nilai3: ', nilai[3]);
 
   readln;
-end.
+End.

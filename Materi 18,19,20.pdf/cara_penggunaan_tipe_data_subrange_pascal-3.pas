@@ -1,17 +1,19 @@
-program tipe_subrange;
-uses crt;
 
-type
+Program tipe_subrange;
+
+Uses crt;
+
+Type 
   huruf = 'A'..'F';
 
-var
+Var 
   a, b: huruf;
 
-begin
+Begin
   clrscr;
 
   a := 'a';
   writeln('a: ', a);
 
   readln;
-end.
+End.

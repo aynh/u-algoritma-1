@@ -1,10 +1,12 @@
-program tipe_boolean;
-uses crt;
 
-var
+Program tipe_boolean;
+
+Uses crt;
+
+Var 
   a: boolean;
 
-begin
+Begin
   clrscr;
 
   a := 1 = 1;
@@ -20,4 +22,4 @@ begin
   writeln('a: ', a);
 
   readln;
-end.
+End.

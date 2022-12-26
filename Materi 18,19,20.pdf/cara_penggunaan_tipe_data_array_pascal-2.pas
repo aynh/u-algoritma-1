@@ -1,10 +1,12 @@
-program tipe_array;
-uses crt;
 
-var
-  kata: array[20..29] of string[20];
+Program tipe_array;
 
-begin
+Uses crt;
+
+Var 
+  kata: array[20..29] Of string[20];
+
+Begin
   clrscr;
 
   kata[24] := 'Sedang ';
@@ -18,4 +20,4 @@ begin
   write(kata[27]);
 
   readln;
-end.
+End.

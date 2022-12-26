@@ -1,10 +1,12 @@
-program tipe_array;
-uses crt;
 
-var
-  nilai: array of integer;
+Program tipe_array;
 
-begin
+Uses crt;
+
+Var 
+  nilai: array Of integer;
+
+Begin
   clrscr;
   setLength(nilai, 10);
 
@@ -17,4 +19,4 @@ begin
   writeln('nilai 9: ', nilai[9]);
 
   readln;
-end.
+End.

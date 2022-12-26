@@ -1,16 +1,18 @@
-program tipe_enumeration;
-uses crt;
 
-type
+Program tipe_enumeration;
+
+Uses crt;
+
+Type 
   nama_hari = (senin, selasa, rabu, kamis, jumat, sabtu, minggu);
   hari_kerja = senin..jumat;
   weekend = sabtu..minggu;
 
-var
+Var 
   a: hari_kerja;
   b: weekend;
 
-begin
+Begin
   clrscr;
 
   a := senin;
@@ -20,4 +22,4 @@ begin
   writeln('b: ', b);
 
   readln;
-end.
+End.
