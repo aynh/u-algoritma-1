@@ -1,5 +1,5 @@
 
-program tipe_enumeration;
+program tipe_array;
 
 uses crt;
 

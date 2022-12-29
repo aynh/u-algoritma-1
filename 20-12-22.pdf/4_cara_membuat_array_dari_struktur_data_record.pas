@@ -1,5 +1,5 @@
 
-program tipe_record;
+program tipe_record_array;
 
 uses crt;
 
