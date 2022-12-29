@@ -1,12 +1,12 @@
 
-Program tipe_string;
+program tipe_string;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   a: string[10];
 
-Begin
+begin
   clrscr;
   a := 'DekaOKTV - Learn Programming';
   writeln('a: ', a);
@@ -17,4 +17,4 @@ Begin
   a := '1234567890123456789';
   writeln('a: ', a);
   readln;
-End.
+end.

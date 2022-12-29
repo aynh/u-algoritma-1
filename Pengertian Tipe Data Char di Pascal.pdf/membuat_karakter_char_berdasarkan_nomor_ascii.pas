@@ -1,12 +1,12 @@
 
-Program tipe_char;
+program tipe_char;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   a: char;
 
-Begin
+begin
   clrscr;
   a := #65;
   writeln('a: ', a);
@@ -17,4 +17,4 @@ Begin
   a := #137;
   writeln('a: ', a);
   readln;
-End.
+end.

@@ -1,12 +1,12 @@
 
-Program tipe_string;
+program tipe_string;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   a: string;
 
-Begin
+begin
   clrscr;
   a := 'Duniailkom';
   writeln('a: ', a);
@@ -17,4 +17,4 @@ Begin
   a := '12345678';
   writeln('a: ', a);
   readln;
-End.
+end.

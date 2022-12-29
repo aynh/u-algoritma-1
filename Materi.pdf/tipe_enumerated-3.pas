@@ -1,17 +1,17 @@
 
-Program tipe_enumerated;
+program tipe_enumerated;
 
-Uses crt;
+uses crt;
 
-Type 
+type 
   warna = (merah, kuning, biru, ungu, jingga);
   angka = (satu, dua, tiga, empat, lima);
 
-Var 
+var 
   a: warna;
   b: angka;
 
-Begin
+begin
   clrscr;
 
   a := kuning;
@@ -21,4 +21,4 @@ Begin
   writeln('b: ', b);
 
   readln;
-End.
+end.

@@ -1,17 +1,17 @@
 
-Program tipe_record;
+program tipe_record;
 
-Uses crt;
+uses crt;
 
-Var 
-  siswa: Record
+var 
+  siswa: record
     nama: string[20];
     umur: integer;
     sekolah: string[20];
     kota: string[20];
-  End;
+  end;
 
-Begin
+begin
   clrscr;
 
   siswa.nama := 'Anto';
@@ -25,4 +25,4 @@ Begin
   writeln('Kota: ', siswa.kota);
 
   readln;
-End.
+end.

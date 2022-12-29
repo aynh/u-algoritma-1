@@ -1,19 +1,19 @@
 
-Program tipe_enumerated;
+program tipe_enumerated;
 
-Uses crt;
+uses crt;
 
-Type 
+type 
   angka = (1, 2, 3, 4, 5);
 
-Var 
+var 
   a, b: angka;
 
-Begin
+begin
   clrscr;
 
   a := 1;
   writeln('a: ', a);
 
   readln;
-End.
+end.

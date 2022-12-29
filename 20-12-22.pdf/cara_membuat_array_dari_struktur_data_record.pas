@@ -1,20 +1,20 @@
 
-Program tipe_record;
+program tipe_record;
 
-Uses crt;
+uses crt;
 
-Type 
-  rec_siswa = Record
+type 
+  rec_siswa = record
     nama: string[20];
     umur: integer;
     sekolah: string[30];
     kota: string[20];
-  End;
+  end;
 
-Var 
-  siswa: array [0..5] Of rec_siswa;
+var 
+  siswa: array [0..5] of rec_siswa;
 
-Begin
+begin
   clrscr;
 
   siswa[0].nama := 'Anto';
@@ -40,4 +40,4 @@ Begin
   writeln('Kota: ', siswa[1].kota);
 
   readln;
-End.
+end.

@@ -1,16 +1,16 @@
 
-Program tipe_real;
+program tipe_real;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   a: real;
   b: single;
   c: double;
   d: extended;
   e: comp;
 
-Begin
+begin
   clrscr;
   a := 12345.6789;
   b := 12345.6789;
@@ -24,4 +24,4 @@ Begin
   writeln('d: ', d:6:4);
   writeln('e: ', e:6:4);
   readln;
-End.
+end.

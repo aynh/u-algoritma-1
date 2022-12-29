@@ -1,13 +1,13 @@
 
-Program tipe_pointer;
+program tipe_pointer;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   angka: integer;
   pointer_angka: ^integer;
 
-Begin
+begin
   clrscr;
 
   angka := 99;
@@ -20,4 +20,4 @@ Begin
   writeln('Variabel pointer merujuk ke nilai: ', pointer_angka^);
 
   readln;
-End.
+end.

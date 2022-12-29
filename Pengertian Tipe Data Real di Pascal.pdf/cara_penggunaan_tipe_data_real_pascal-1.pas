@@ -1,12 +1,12 @@
 
-Program tipe_real;
+program tipe_real;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   a: real;
 
-Begin
+begin
   clrscr;
   a := 3.14;
   writeln('a: ', a:4:2);
@@ -17,4 +17,4 @@ Begin
   a := a + 0.01;
   writeln('a: ', a:4:2);
   readln;
-End.
+end.

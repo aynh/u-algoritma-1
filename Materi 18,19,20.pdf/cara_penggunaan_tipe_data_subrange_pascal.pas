@@ -1,15 +1,15 @@
 
-Program tipe_subrange;
+program tipe_subrange;
 
-Uses crt;
+uses crt;
 
-Type 
+type 
   satuan = 1..9;
 
-Var 
+var 
   a, b: satuan;
 
-Begin
+begin
   clrscr;
 
   a := 2;
@@ -19,4 +19,4 @@ Begin
   writeln('b: ', b);
 
   readln;
-End.
+end.

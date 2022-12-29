@@ -1,13 +1,13 @@
 
-Program tipe_pointer;
+program tipe_pointer;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   nama: string[20];
   pointer: ^string;
 
-Begin
+begin
   clrscr;
 
   nama := 'Unyil';
@@ -23,4 +23,4 @@ Begin
   writeln('Variabel nama berisi: ', nama);
 
   readln;
-End.
+end.

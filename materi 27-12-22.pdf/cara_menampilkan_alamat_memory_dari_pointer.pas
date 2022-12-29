@@ -1,14 +1,14 @@
 
-Program tipe_pointer;
+program tipe_pointer;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   angka: integer;
   pointer: ^integer;
   i: ^word;
 
-Begin
+begin
   clrscr;
 
   angka := 99;
@@ -21,4 +21,4 @@ Begin
   writeln('Alamat memory yang digunakan adalah: ', i^);
 
   readln;
-End.
+end.

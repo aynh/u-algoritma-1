@@ -1,12 +1,12 @@
 
-Program tipe_array;
+program tipe_array;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   nilai1, nilai2, nilai3, nilai4: integer;
 
-Begin
+begin
   clrscr;
 
   nilai1 := 23;
@@ -20,4 +20,4 @@ Begin
   writeln('nilai4: ', nilai4);
 
   readln;
-End.
+end.

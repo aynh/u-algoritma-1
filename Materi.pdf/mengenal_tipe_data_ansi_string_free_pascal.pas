@@ -1,12 +1,12 @@
 
-Program tipe_string;
+program tipe_string;
 
-Uses crt;
+uses crt;
 
-Var 
+var 
   a: string;
 
-Begin
+begin
   clrscr;
   a := 'Pascal diambil dari nama ahli matematika prancis abad pertengahan, ' +
        'Blaise Pascal. Bahasa Pascal di kembangkan oleh Niklaus Wirth pada ' +
@@ -16,4 +16,4 @@ Begin
        'universitas di seluruh dunia (termasuk Indonesia).';
   writeln(a);
   readln;
-End.
+end.
