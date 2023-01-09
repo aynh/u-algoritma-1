@@ -8,6 +8,11 @@ var
 
 begin
   clrscr;
+  writeln('==================');
+  writeln('Nama: Ahmad Yasser');
+  writeln('NPM : 2210010525');
+  writeln('==================');
+
   a := 'Pascal diambil dari nama ahli matematika prancis abad pertengahan, ' +
        'Blaise Pascal. Bahasa Pascal di kembangkan oleh Niklaus Wirth pada ' +
        'tahun 1970, dan populer digunakan pada era 1970 hingga awal 1990an. ' +

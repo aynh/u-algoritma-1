@@ -8,6 +8,11 @@ var
 
 begin
   clrscr;
+  writeln('==================');
+  writeln('Nama: Ahmad Yasser');
+  writeln('NPM : 2210010525');
+  writeln('==================');
+
   setLength(nilai, 4, 4);
 
   nilai[0, 0] := 34;

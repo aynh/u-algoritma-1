@@ -8,6 +8,10 @@ var
 
 begin
   clrscr;
+  writeln('==================');
+  writeln('Nama: Ahmad Yasser');
+  writeln('NPM : 2210010525');
+  writeln('==================');
 
   kata[24] := 'Sedang ';
   kata[25] := 'Belajar pascal ';

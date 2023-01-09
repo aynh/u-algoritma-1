@@ -12,6 +12,11 @@ var
 
 begin
   clrscr;
+  writeln('==================');
+  writeln('Nama: Ahmad Yasser');
+  writeln('NPM : 2210010525');
+  writeln('==================');
+
   a := 12345.6789;
   b := 12345.6789;
   c := 12345.6789;

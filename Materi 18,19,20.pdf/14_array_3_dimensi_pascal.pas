@@ -8,6 +8,10 @@ var
 
 begin
   clrscr;
+  writeln('==================');
+  writeln('Nama: Ahmad Yasser');
+  writeln('NPM : 2210010525');
+  writeln('==================');
 
   nilai[0, 0, 2] := 2;
   writeln(nilai[0, 0, 2]);

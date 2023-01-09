@@ -9,6 +9,10 @@ var
 
 begin
   clrscr;
+  writeln('==================');
+  writeln('Nama: Ahmad Yasser');
+  writeln('NPM : 2210010525');
+  writeln('==================');
 
   angka := 99;
   writeln('Variabel angka berisi: ', angka);
