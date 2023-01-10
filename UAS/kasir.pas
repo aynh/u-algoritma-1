@@ -1,7 +1,7 @@
 
 program kasir;
 
-uses crt, math, strutils;
+uses crt, math, strutils, sysutils;
 
 type 
   tipe_barang = record
@@ -31,7 +31,7 @@ begin
   write('jumlah barang: ');
   readln(input_integer);
 
-  min_no_len := max(min_no_len, floor(log10(input_integer)));
+  min_no_len := max(min_no_len, length(inttostr(input_integer)));
   setLength(barang, input_integer);
   for counter := 1 to input_integer do
     begin
@@ -45,11 +45,11 @@ begin
 
           write('Harga: ');
           readln(harga);
-          min_harga_len := max(min_harga_len, floor(log10(harga))+1);
+          min_harga_len := max(min_harga_len, length(floattostr(harga)));
 
           write('Jumlah: ');
           readln(jumlah);
-          min_harga_len := max(min_harga_len, floor(log10(jumlah)));
+          min_harga_len := max(min_harga_len, length(inttostr(jumlah)));
 
           total_harga := total_harga + (harga * jumlah);
         end;
