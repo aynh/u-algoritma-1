@@ -92,18 +92,18 @@ begin
   clrscr;
   writeln('OUTPUT HASIL');
 
-  writeln('|', dupestring('-', min_no_len + 2), '|', dupestring('-', min_nama_len + 2), '|',
-  dupestring('-', min_harga_len + 2), '|', dupestring('-', min_jumlah_len + 2), '|');
+  writeln('*', dupestring('-', min_no_len + 2), '*', dupestring('-', min_nama_len + 2), '*',
+  dupestring('-', min_harga_len + 2), '*', dupestring('-', min_jumlah_len + 2), '*');
   writeln('| ', 'No':min_no_len, ' | ', 'Nama':min_nama_len, ' | ', 'Harga':min_harga_len, ' | ',
           'Jumlah':min_jumlah_len, ' |');
-  writeln('|', dupestring('-', min_no_len + 2), '|', dupestring('-', min_nama_len + 2), '|',
-  dupestring('-', min_harga_len + 2), '|', dupestring('-', min_jumlah_len + 2), '|');
+  writeln('*', dupestring('-', min_no_len + 2), '*', dupestring('-', min_nama_len + 2), '*',
+  dupestring('-', min_harga_len + 2), '*', dupestring('-', min_jumlah_len + 2), '*');
   for counter := 1 to length(barang) do
     with barang[counter-1] do
       writeln('| ', counter:min_no_len, ' | ', nama:min_nama_len, ' | ', harga:min_harga_len:0,
               ' | ', jumlah:min_jumlah_len, ' |');
-  writeln('|', dupestring('-', min_no_len + 2), '|', dupestring('-', min_nama_len + 2), '|',
-  dupestring('-', min_harga_len + 2), '|', dupestring('-', min_jumlah_len + 2), '|');
+  writeln('*', dupestring('-', min_no_len + 2), '*', dupestring('-', min_nama_len + 2), '*',
+  dupestring('-', min_harga_len + 2), '*', dupestring('-', min_jumlah_len + 2), '*');
 
   writeln('> Total harga : ', total_harga:0:2);
   writeln('> Total diskon: ', diskon:0:2);
