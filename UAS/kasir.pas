@@ -31,6 +31,12 @@ begin
   write('jumlah barang: ');
   readln(input_integer);
 
+  if input_integer < 1 then
+    begin
+      writeln('ERROR: Jumlah barang harus diatas 0!');
+      exit();
+    end;
+
   min_no_len := max(min_no_len, length(inttostr(input_integer)));
   setLength(barang, input_integer);
   for counter := 1 to input_integer do
