@@ -1,119 +1,108 @@
 
 program kasir;
 
-uses crt, math, strutils, sysutils;
+uses crt, strutils;
 
 type 
   tipe_barang = record
     nama: string;
-    harga: real;
+    harga: currency;
     jumlah: integer;
+    total: currency;
+    diskon: currency;
   end;
 
 var 
   barang: array of tipe_barang;
-  total_harga: real = 0;
-  persen_diskon: integer = 0;
-  diskon: real = 0;
-  total_bayar: real;
-  input_bayar: real;
+  total_bayar: currency = 0;
+  total_harga: currency = 0;
+  total_diskon: currency = 0;
+  kembalian: currency = 0;
 
-  input_integer: integer;
+  input_jumlah_barang: integer;
+  input_metode_pembayaran: integer;
+  input_pembayaran: currency;
   counter: integer;
-
-  min_no_len: integer = 2;
-  min_nama_len: integer = 4;
-  min_harga_len: integer = 5;
-  min_jumlah_len: integer = 6;
 
 begin
   clrscr;
-  write('jumlah barang: ');
-  readln(input_integer);
+  write('Jumlah barang: ');
+  readln(input_jumlah_barang);
 
-  if input_integer < 1 then
-    begin
-      writeln('ERROR: Jumlah barang harus diatas 0!');
-      exit();
-    end;
-
-  min_no_len := max(min_no_len, length(inttostr(input_integer)));
-  setLength(barang, input_integer);
-  for counter := 1 to input_integer do
+  if input_jumlah_barang <= 0 then
     begin
       clrscr;
-      writeln('INPUT BARANG NO.', counter);
+      writeln('ERROR: Jumlah barang harus lebih dari 0!');
+      exit;
+    end;
+
+  setLength(barang, input_jumlah_barang);
+  for counter := 1 to input_jumlah_barang do
+    begin
+      clrscr;
+      writeln('Input barang ke-', counter);
       with barang[counter-1] do
         begin
           write('Nama: ');
           readln(nama);
-          min_nama_len := max(min_nama_len, length(nama));
 
           write('Harga: ');
           readln(harga);
-          min_harga_len := max(min_harga_len, length(floattostr(harga)));
 
           write('Jumlah: ');
           readln(jumlah);
-          min_harga_len := max(min_harga_len, length(inttostr(jumlah)));
 
-          total_harga := total_harga + (harga * jumlah);
+          total := harga * jumlah;
+
+          if jumlah > 5 then
+            diskon := total * 0.05
+          else
+            diskon := 0;
+
+          total_harga := total_harga + total;
+          total_diskon := total_diskon + diskon;
         end;
     end;
 
-  if (total_harga > 250000) and (total_harga <= 500000) then
-    persen_diskon := 5
-  else if (total_harga > 500000) and (total_harga <= 1000000) then
-         persen_diskon := 10
-  else if (total_harga > 1000000) then
-         persen_diskon := 20;
+  clrscr;
+  writeln('Input metode pembayaran');
+  writeln('> 1. Cash');
+  writeln('> 2. E-Cash');
+  write('Pilih metode: ');
+  readln(input_metode_pembayaran);
+
+  if input_metode_pembayaran = 2 then
+    total_diskon := total_diskon + 5000;
+
+  total_bayar := total_harga - total_diskon;
 
   clrscr;
-  writeln('INPUT PEMBAYARAN');
-  writeln('= 1. Cash');
-  writeln('= 2. M-Banking');
-  write('Pilih: ');
-  readln(input_integer);
+  writeln(dupestring('-', 58));
+  writeln('Nama':15, 'Jumlah':8, 'Harga':10, 'Total':12, 'Diskon':10);
+  writeln(dupestring('-', 58));
 
-  if input_integer = 2 then
-    persen_diskon := persen_diskon + 10
-  else if input_integer <> 1 then
-         begin
-           writeln('ERROR: Pilih metode pembayaran 1 atau 2!');
-           exit();
-         end;
+  for counter := 1 to input_jumlah_barang do
+    with barang[counter-1] do
+      writeln(nama:15, jumlah:8, harga:10:0, total:12:0, diskon:10:0);
 
-  diskon := total_harga * (persen_diskon / 100);
+  writeln(dupestring('-', 58));
+  writeln('Total diskon : ':34, total_diskon:0:0);
+  writeln('Total harga : ':34, total_harga:0:0);
+  writeln('Total bayar : ':34, total_bayar:0:0);
+  writeln(dupestring('-', 58));
 
-  write('Jumlah bayar: ');
-  readln(input_bayar);
+  write('Pembayaran : ':34);
+  readln(input_pembayaran);
+  writeln(dupestring('-', 58));
 
-  total_bayar := total_harga - diskon;
-  if input_bayar < total_bayar then
+  if input_pembayaran < total_bayar then
     begin
-      writeln('ERROR: Pembayaran tidak cukup, kurang ', total_bayar - input_bayar:0:2, '!');
-      exit();
+      clrscr;
+      writeln('ERROR: Pembayaran kurang ', total_bayar - input_pembayaran:0:0);
+      exit;
     end;
 
-  clrscr;
-  writeln('OUTPUT HASIL');
-
-  writeln('*', dupestring('-', min_no_len + 2), '*', dupestring('-', min_nama_len + 2), '*',
-  dupestring('-', min_harga_len + 2), '*', dupestring('-', min_jumlah_len + 2), '*');
-  writeln('| ', 'No':min_no_len, ' | ', 'Nama':min_nama_len, ' | ', 'Harga':min_harga_len, ' | ',
-          'Jumlah':min_jumlah_len, ' |');
-  writeln('*', dupestring('-', min_no_len + 2), '*', dupestring('-', min_nama_len + 2), '*',
-  dupestring('-', min_harga_len + 2), '*', dupestring('-', min_jumlah_len + 2), '*');
-  for counter := 1 to length(barang) do
-    with barang[counter-1] do
-      writeln('| ', counter:min_no_len, ' | ', nama:min_nama_len, ' | ', harga:min_harga_len:0,
-              ' | ', jumlah:min_jumlah_len, ' |');
-  writeln('*', dupestring('-', min_no_len + 2), '*', dupestring('-', min_nama_len + 2), '*',
-  dupestring('-', min_harga_len + 2), '*', dupestring('-', min_jumlah_len + 2), '*');
-
-  writeln('> Total harga : ', total_harga:0:2);
-  writeln('> Total diskon: ', diskon:0:2);
-  writeln('> Total bayar : ', total_bayar:0:2);
-  writeln('> Jumlah bayar: ', input_bayar:0:2);
-  writeln('> Kembalian   : ', input_bayar - total_bayar:0:2);
+  kembalian := input_pembayaran - total_bayar;
+  writeln('Kembalian : ':34, kembalian:0:0);
+  writeln(dupestring('-', 58));
 end.
